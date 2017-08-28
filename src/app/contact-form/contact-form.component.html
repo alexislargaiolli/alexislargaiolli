@@ -1,0 +1,47 @@
+<form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)" [@contactFormAnim]="status">
+
+  <div class="idle-container d-flex flex-column" *ngIf="status === STATUS_IDLE">
+    <h2>Travaillons ensemble, contactez-moi</h2>
+    <md-input-container>
+      <input mdInput type="text" name="name" ngModel placeholder="Votre nom" required>
+    </md-input-container>
+    <md-input-container>
+      <input mdInput type="email" name="email" email ngModel placeholder="Votre adresse email" required>
+    </md-input-container>
+    <md-input-container>
+      <textarea mdInput name="content" ngModel placeholder="Que recherchez-vous ? Décrivez simplement votre projet..." required></textarea>
+    </md-input-container>
+    <div class="text-right">
+      <button type="submit" md-raised-button>Envoyer</button>
+    </div>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center" *ngIf="status === STATUS_SENDING">
+    <p>Envoi en cours...</p>
+    <md-progress-bar mode="indeterminate"></md-progress-bar>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center" *ngIf="status === STATUS_SUCCESS">
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="icon-stack mr-2">
+        <md-icon>mail</md-icon>
+        <md-icon class="text-success mr-2">check_circle</md-icon>
+      </div>
+      <span>Votre message a bien été envoyé.</span>
+    </div>
+    <span class="mt-4">Vous receverez une réponse dans les 5 heures ouvrées.</span>
+    <button type="button" (click)="reset(contactForm)" class="mt-4" md-raised-button>Envoyer un autre message</button>
+  </div>
+
+  <div class="d-flex flex-column justify-content-center align-items-center" *ngIf="status === STATUS_ERROR">
+    <div class="d-flex justify-content-center align-items-center">
+      <div class="icon-stack mr-2">
+        <md-icon>mail</md-icon>
+        <md-icon class="text-danger">error</md-icon>
+      </div>
+      <span class="text-justify">Une erreur est survenue pendant l'envoie.</span>
+    </div>
+    <button class="mt-4" md-raised-button>Réessayer</button>
+  </div>
+
+</form>

@@ -1,0 +1,22 @@
+form {
+  min-height: 280px;
+  &>div {
+    min-height: 280px;
+    width: 100%;
+  }
+}
+
+.icon-stack {
+  height: 60px;
+  md-icon:first-child {
+    position: relative;
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+  }
+  md-icon:last-child {
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 35px;
+  }
+}

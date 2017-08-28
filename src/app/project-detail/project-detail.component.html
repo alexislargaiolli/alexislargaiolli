@@ -1,0 +1,12 @@
+<swiper #swiper [config]="swiperConfig">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide text-center" *ngFor="let slide of project.slides">
+      <img [src]="slide.posterUrl">
+    </div>
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- Add Arrows -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</swiper>

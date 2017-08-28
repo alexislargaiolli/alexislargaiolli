@@ -29,6 +29,11 @@ app.use(express.static(__dirname + '/dist'));
 // Heroku port
 app.listen(process.env.PORT || 8080);
 
+app.post('/contact', function (req, res) {
+
+  res.send(200);
+});
+
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
