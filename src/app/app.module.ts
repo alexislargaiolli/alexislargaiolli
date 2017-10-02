@@ -15,11 +15,9 @@ import { WorksComponent } from './works/works.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectComponent } from './project/project.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { MdIconModule } from '@angular/material';
 import { MdInputModule } from '@angular/material';
 import { MdProgressBarModule } from '@angular/material';
-import { SwiperModule } from 'angular2-useful-swiper';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { InViewportDirective } from './in-viewport.directive';
 import { HomeComponent } from './home/home.component';
@@ -45,13 +43,11 @@ import { ProjectListComponent } from './project-list/project-list.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    LazyLoadImageModule,
     BrowserAnimationsModule,
     AppRoutes,
     MdButtonModule,
     MdInputModule,
     MdIconModule,
-    SwiperModule,
     MdProgressBarModule
   ],
   providers: [

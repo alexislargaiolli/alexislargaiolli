@@ -54,13 +54,13 @@ export class ProjectDetailComponent implements OnInit, OnDestroy, AfterViewInit,
   slideState = 'idle';
 
   constructor(
-    activatedRoute: ActivatedRoute,
+    private _hostElement: ElementRef,
+    private _activatedRoute: ActivatedRoute,
     private _animationService: AnimationService,
-    private _builder: AnimationBuilder,
-    private _hostElement: ElementRef
+    private _builder: AnimationBuilder
   ) {
     // tslint:disable-next-line:triple-equals
-    this.project = this.projects.find(p => p.id == activatedRoute.snapshot.params.projectId);
+    this.project = this.projects.find(p => p.id == _activatedRoute.snapshot.params.projectId);
   }
 
   ngOnInit() {
@@ -83,13 +83,13 @@ export class ProjectDetailComponent implements OnInit, OnDestroy, AfterViewInit,
     }
   }
 
-  public nextSlide(event) {
+  public nextSlide() {
     if (this.slideState === 'idle') {
       this.slideState = 'hiddingNext';
     }
   }
 
-  public prevSlide(event) {
+  public prevSlide() {
     if (this.slideState === 'idle') {
       this.slideState = 'hiddingPrev';
     }

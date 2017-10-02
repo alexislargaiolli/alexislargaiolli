@@ -20,14 +20,10 @@
     "prefix": "app",
     "styles": [
       "libs/font-awesome/css/font-awesome.css",
-      "styles.scss",
-      "../node_modules/swiper/dist/css/swiper.css"
+      "styles.scss"
     ],
     "scripts": [
-      "../node_modules/jquery/dist/jquery.min.js",
       "../node_modules/bootstrap/js/dist/util.js",
-      "../node_modules/bootstrap/js/dist/collapse.js",
-      "../node_modules/swiper/dist/js/swiper.js",
       "../node_modules/hammerjs/hammer.min.js"
     ],
     "environmentSource": "environments/environment.ts",
