@@ -47,8 +47,7 @@ export class WorksComponent implements OnDestroy, AfterViewInit, CanComponentDea
     private _router: Router,
     private _builder: AnimationBuilder,
     private _location: Location,
-    private _hostElement: ElementRef,
-    private _plateformLocation: PlatformLocation
+    private _hostElement: ElementRef
   ) {
     this.routerSubscription = this._router.events.filter(e => e instanceof NavigationEnd).pairwise()
       .subscribe((events: [NavigationEnd, NavigationEnd]) => {
@@ -61,9 +60,6 @@ export class WorksComponent implements OnDestroy, AfterViewInit, CanComponentDea
           this.hideList = true;
         }
       });
-    this._plateformLocation.onPopState(() => {
-      console.log('pop');
-    });
   }
 
   /**
