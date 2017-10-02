@@ -30,7 +30,8 @@ nav {
   height: -moz-calc(100% - 60px);
   height: -webkit-calc(100% - 60px);
   height: calc(100% - 60px);
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   &.hidden {
     opacity: 0;
   }

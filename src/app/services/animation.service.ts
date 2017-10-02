@@ -14,7 +14,7 @@ import { Injectable, ElementRef, AnimationKeyframesSequenceMetadata } from '@ang
 export class AnimationService {
     public static readonly SELECTED_PROJECT_TITLE_POSITION_KEY = 'selectedProjectTitle';
     public static readonly SELECTED_PROJECT_IMAGE_POSITION_KEY = 'selectedProjectImage';
-    public static readonly MIN_DURATION = 100;
+    public static readonly MIN_DURATION = 150;
     public static readonly MAX_DURATION = 300;
 
     private _datas: Map<string, any>;

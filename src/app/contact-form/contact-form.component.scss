@@ -1,9 +1,52 @@
+:host {
+  padding-top: 10%;
+  display: block;
+}
+
+.container {
+  max-width: 600px;
+}
+
+.home-title {
+  display: inline-block;
+}
+
+h2 {
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
 form {
   min-height: 280px;
   &>div {
     min-height: 280px;
     width: 100%;
   }
+  .send-btn {
+    background-color: #4285f4;
+    color: #fff;
+  }
+  md-form-field {
+    width: 100%;
+  }
+}
+
+/deep/ .project-content {
+  .mat-input-flex {
+    align-items: flex-start;
+  }
+  .mat-input-prefix {
+    margin-top: 17px;
+  }
+}
+
+/deep/ .mat-input-prefix {
+  margin-right: 10px;
+  color: #666;
 }
 
 .icon-stack {

@@ -52,7 +52,8 @@ const routes: Routes = [
     component: ContactFormComponent,
     data: {
       animation: 'contact'
-    }
+    },
+    canDeactivate: [CanDesactivate]
   },
   {
     path: '',

@@ -1,19 +1,30 @@
 <div class="container">
+  <nav>
+    <a (click)="back()" class="back-button back-icon fa fa-arrow-circle-left" aria-hidden="true"></a>
+    <h1 #title class="home-title">Contactez-moi</h1>
+    <h2>, travaillons ensemble</h2>
+  </nav>
   <form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)" [@contactFormAnim]="status">
 
-    <div class="idle-container d-flex flex-column" *ngIf="status === STATUS_IDLE">
-      <h2>Travaillons ensemble, contactez-moi</h2>
-      <md-input-container>
-        <input mdInput type="text" name="name" ngModel placeholder="Votre nom" required>
-      </md-input-container>
-      <md-input-container>
-        <input mdInput type="email" name="email" email ngModel placeholder="Votre adresse email" required>
-      </md-input-container>
-      <md-input-container>
-        <textarea mdInput name="content" ngModel placeholder="Que recherchez-vous ? Décrivez simplement votre projet..." required></textarea>
-      </md-input-container>
+    <div class="idle-container" *ngIf="status === STATUS_IDLE">
+      <md-form-field>
+        <span mdPrefix><md-icon>person</md-icon></span>
+        <input mdInput type="text" name="name" ngModel placeholder="Votre nom">
+      </md-form-field>
+      <md-form-field>
+        <span mdPrefix><md-icon>email</md-icon></span>
+        <input mdInput type="email" name="email" ngModel placeholder="Votre adresse email">
+      </md-form-field>
+      <md-form-field>
+        <span mdPrefix><md-icon>phone</md-icon></span>
+        <input mdInput type="tel" name="tel" ngModel placeholder="Votre téléphone">
+      </md-form-field>
+      <md-form-field class="project-content">
+        <span mdPrefix><md-icon>lightbulb_outline</md-icon></span>
+        <textarea mdInput name="content" rows="4" ngModel placeholder="Que recherchez-vous ? Décrivez simplement votre projet..."></textarea>
+      </md-form-field>
       <div class="text-right">
-        <button type="submit" md-raised-button>Envoyer</button>
+        <button type="submit" md-raised-button class="send-btn">Envoyer</button>
       </div>
     </div>
 

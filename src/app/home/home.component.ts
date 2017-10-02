@@ -10,12 +10,6 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('projectButton')
-  public projectButton;
-
-  @ViewChild('workLink')
-  workLink: ElementRef;
-
   constructor(private _componentRef: ElementRef,
     private _router: Router,
     public builder: AnimationBuilder,
@@ -23,20 +17,6 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  }
-
-  animate() {
-    // this makes instructions on how to build the animation
-    const factory = this.builder.build([
-      style({ transform: 'translate(0,0)' }),
-      animate('350ms cubic-bezier(.35, 0, .25, 1)', style({ transform: 'translate(-100px,-100px)' }))
-    ]);
-
-    // this creates the animation
-    const player = factory.create(this.projectButton.nativeElement);
-
-    // start it off
-    player.play();
   }
 
   goTo(sourceLinkNativeElement, targetRoute) {

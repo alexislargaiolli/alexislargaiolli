@@ -157,17 +157,17 @@ export class WorksComponent implements OnDestroy, AfterViewInit, CanComponentDea
     if (initialTitlePosition) {
       const currentPosition: BoundingRect = this.titleElement.nativeElement.getBoundingClientRect();
       const titleAnim = this._animationService.createTranslationAnimationMetadata(initialTitlePosition, currentPosition, currentPosition,
-        EasingEnum.linear, EasingEnum.easeInCubic);
+        EasingEnum.linear, EasingEnum.easeInCubic, 10, 200);
       this.enterAnim = this._builder.build([
         query('.back-button', style({ opacity: 0 })),
-        query('.projects-title', titleAnim),
-        query('.back-button', animate('200ms ease-in', style({ opacity: 1 }))),
+        query('.home-title', titleAnim),
+        query('.back-button', animate('100ms ease-out', style({ opacity: 1 }))),
         query('.project-list-item', [
           style({ opacity: 0, transform: 'translateX(-10%)' }),
         ]),
         query('.project-list-item', [
           stagger('40ms', [
-            animate('200ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
+            animate('150ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })),
           ])
         ])
       ]).create(this._hostElement.nativeElement);
@@ -181,13 +181,10 @@ export class WorksComponent implements OnDestroy, AfterViewInit, CanComponentDea
       const titleAnim = this._animationService.createTranslationAnimationMetadata(currentPosition, finalTitlePosition, currentPosition,
         EasingEnum.linear, EasingEnum.easeOutCubic);
       this.leaveAnim = this._builder.build([
-        query('.project-list-item', [
-          stagger('40ms', [
-            animate('200ms ease-in', style({ opacity: 0, transform: 'translateX(10%)' })),
-          ])
+        query('.back-button, .project-list-item', [
+          animate('150ms ease-in', style({ opacity: 0 })),
         ]),
-        query('.back-button', animate('200ms ease-out', style({ opacity: 0 }))),
-        query('.projects-title', titleAnim),
+        query('.home-title', titleAnim),
       ]).create(this._hostElement.nativeElement);
     }
   }
