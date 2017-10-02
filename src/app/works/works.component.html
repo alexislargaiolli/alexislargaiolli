@@ -1,69 +1,16 @@
 <div class="container">
-  <section>
-    <h1 i18n>Développeur freelance basé à Montpellier</h1>
-    <p class="text-justify" i18n>
-      Curieux de nature et passionné d'ingénierie logicielle, j'ai évolué pendant 4 ans sur le poste de chef de projet au sein
-      de la startup montpelliéraine WeAreLearning. Freelancer à temps partiel pendant cette période, j'ai développé d'innovantes
-      applications web. Fort de ces expériences, je maîtrise un large panel de compétences allant au-delà du développement
-      web comme l'administration de système, la mise en place d'infrastructures serveurs, la sécurité informatique etc...
-      Je réalise de la veille en permanence et n'hésite jamais à essayer de nouvelles technologies me permettant de répondre
-      au mieux à chaque projet. Ainsi, je réalise auprès de vous un véritable travail d'analyse et de conseil pour imaginer
-      et développer les solutions web qui répondent le mieux à vos besoins. Dans mon travail, j'accorde une valeur toute
-      particulière à la qualité des rapports humains, qui, j'en suis sûr, contribue grandement à la réussite de projet.
-    </p>
-  </section>
-</div>
+  <nav>
+    <a (click)="back()" class="back-button back-icon fa fa-arrow-circle-left" aria-hidden="true"></a>
+    <h1 #title class="home-title projects-title">Mes projets</h1>
+  </nav>
 
-<section>
-  <div *ngIf="selectedProject; else projectList">
-    <div class="container">
-      <div class="d-flex align-items-baseline my-4">
-        <button md-mini-fab (click)="unselectProject()" class="mr-4">
-      <md-icon>arrow_back</md-icon>
-    </button>
-        <h3>{{selectedProject.name}} - <small>{{selectedProject.subtitle}}</small></h3>
-      </div>
-      <p>{{selectedProject.description}}</p>
-    </div>
-    <div class="container-fluid">
-      <app-project-detail [project]="selectedProject"></app-project-detail>
+  <div class="row project-list" [ngClass]="{'hidden': hideList}">
+    <div *ngFor="let project of projects" (click)="selectProject(project, projectTitle, projectImage)" class="project-list-item project-{{project.id}} col-xs-12 col-md-6">
+      <!-- <h2 #projectTitle class="project-title">{{project.name}}</h2> -->
+      <img #projectImage [src]="project.slides[0].posterUrl">
     </div>
   </div>
 
-  <ng-template #projectList>
-    <div class="container">
-      <h2>Projets récents</h2>
-      <div class="row">
-        <div *ngFor="let project of projects" class="col-12 col-md-6 mt-4 text-center">
-          <app-project [project]="project" (click)="selectProject(project)"></app-project>
-        </div>
-      </div>
-    </div>
-  </ng-template>
-</section>
 
-<div class="container">
-  <section>
-    <h2>Clients</h2>
-    <div class="row">
-      <div *ngFor="let client of clients" class="col-12 col-md-6">
-        <article>
-          <h3>{{client.name}}</h3>
-          <span>{{client.subtitle}}</span>
-          <p>{{client.reference}}</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="row">
-      <div class="col-12 col-md-6">
-
-      </div>
-      <div class="col-12 col-md-6">
-        <app-contact-form></app-contact-form>
-      </div>
-    </div>
-  </section>
+  <router-outlet></router-outlet>
 </div>

@@ -1,7 +1,45 @@
-section {
-  margin-top: 100px;
+:host {
+  padding: 20px 0;
+  height: 100%;
+  display: block;
+  &>.container {
+    height: 100%;
+  }
 }
 
-section:last-child {
-  margin-bottom: 100px;
+$nav-height: 40px;
+$nav-margin: 20px;
+nav {
+  height: $nav-height;
+  margin-bottom: $nav-margin;
+}
+
+.home-title {
+  display: inline-block;
+}
+
+.project-title-marker,
+.selected-project-title,
+.back-icon {
+  opacity: 0;
+}
+
+.project-list {
+  position: absolute;
+  width: 100%;
+  height: -moz-calc(100% - 60px);
+  height: -webkit-calc(100% - 60px);
+  height: calc(100% - 60px);
+  overflow-y: scroll;
+  &.hidden {
+    opacity: 0;
+  }
+  .project-list-item {
+    opacity: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    img {
+      max-width: 100%;
+    }
+  }
 }

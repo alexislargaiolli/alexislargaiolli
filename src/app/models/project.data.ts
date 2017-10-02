@@ -2,14 +2,13 @@ import { Slide } from './slide.model';
 import { Project } from './project.model';
 export const PROJECTS: Project[] = [
     {
+        id: 1,
         name: 'WeAreLearning',
+        link: 'https://www.wearelearning.com',
         subtitle: 'Gestion de projet et développement',
         description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.`,
         posterUrl: 'assets/projects/wal/wal.jpg',
         slides: [
             {
@@ -21,17 +20,30 @@ export const PROJECTS: Project[] = [
             {
                 posterUrl: 'assets/projects/wal/wal-3.jpg'
             }
+        ],
+        technos: [
+            {
+                name: 'J2EE',
+                posterUrl: 'assets/technos/j2ee.jpg'
+            },
+            {
+                name: 'hibernate',
+                posterUrl: 'assets/technos/hibernate.jpg'
+            },
+            {
+                name: 'mysql',
+                posterUrl: 'assets/technos/mysql.jpg'
+            }
         ]
     },
     {
+        id: 2,
         name: 'MyFeelanceManager',
+        link: 'https://my-manager-client.herokuapp.com/',
         subtitle: 'Développement et design',
         description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.`,
         posterUrl: 'assets/projects/mfm/mfm.jpg',
         slides: [
             {
@@ -46,17 +58,30 @@ export const PROJECTS: Project[] = [
             {
                 posterUrl: 'assets/projects/mfm/mfm-3.jpg'
             }
+        ],
+        technos: [
+            {
+                name: 'Angular2',
+                posterUrl: 'assets/technos/angularjs.jpg'
+            },
+            {
+                name: 'NodeJs',
+                posterUrl: 'assets/technos/nodejs.jpg'
+            },
+            {
+                name: 'Redux',
+                posterUrl: 'assets/technos/redux.jpg'
+            }
         ]
     },
     {
+        id: 3,
         name: 'TooFrench',
+        link: 'https://toofrench.net',
         subtitle: 'Développement',
         description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.`,
         posterUrl: 'assets/projects/toofrench/toofrench.jpg',
         slides: [
             {
@@ -68,17 +93,30 @@ export const PROJECTS: Project[] = [
             {
                 posterUrl: 'assets/projects/toofrench/toofrench-3.jpg'
             }
+        ],
+        technos: [
+            {
+                name: 'AngularJS',
+                posterUrl: 'assets/technos/angularjs.jpg'
+            },
+            {
+                name: 'NodeJs',
+                posterUrl: 'assets/technos/nodejs.jpg'
+            },
+            {
+                name: 'MongoDB',
+                posterUrl: 'assets/technos/mongo.jpg'
+            }
         ]
     },
     {
+        id: 4,
         name: 'LesRégimes',
+        link: 'http://lesregimes.net',
         subtitle: 'Développement',
         description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.`,
         posterUrl: 'assets/projects/regimesnet/regimesnet.jpg',
         slides: [
             {
@@ -95,6 +133,20 @@ export const PROJECTS: Project[] = [
             },
             {
                 posterUrl: 'assets/projects/regimesnet/regimes-5.jpg'
+            }
+        ],
+        technos: [
+            {
+                name: 'AngularJS',
+                posterUrl: 'assets/technos/angularjs.jpg'
+            },
+            {
+                name: 'NodeJs',
+                posterUrl: 'assets/technos/nodejs.jpg'
+            },
+            {
+                name: 'MongoDB',
+                posterUrl: 'assets/technos/mongo.jpg'
             }
         ]
     }

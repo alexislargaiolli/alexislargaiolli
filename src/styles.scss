@@ -21,3 +21,34 @@
 @import "../node_modules/bootstrap/scss/navbar";
 @import "../node_modules/bootstrap/scss/utilities";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.home-title {
+  font-size: 30px;
+}
+
+.project-title {
+  font-size: 20px;
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+.back-icon {
+  font-size: 28px;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.back-icon:hover {
+  text-decoration: none;
+}

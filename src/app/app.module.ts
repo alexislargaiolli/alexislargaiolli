@@ -1,3 +1,6 @@
+import { CanDesactivate } from './component.guard';
+import { ProjectListItemComponent } from './project-list/project-list-item/project-list-item.component';
+import { AnimationService } from './services/animation.service';
 import { AppRoutes } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,6 +21,10 @@ import { MdInputModule } from '@angular/material';
 import { MdProgressBarModule } from '@angular/material';
 import { SwiperModule } from 'angular2-useful-swiper';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { InViewportDirective } from './in-viewport.directive';
+import { HomeComponent } from './home/home.component';
+import { ClientsComponent } from './clients/clients.component';
+import { ProjectListComponent } from './project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +34,12 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     AboutComponent,
     ProjectComponent,
     ProjectDetailComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    InViewportDirective,
+    HomeComponent,
+    ClientsComponent,
+    ProjectListComponent,
+    ProjectListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +54,10 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     SwiperModule,
     MdProgressBarModule
   ],
-  providers: [],
+  providers: [
+    AnimationService,
+    CanDesactivate
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

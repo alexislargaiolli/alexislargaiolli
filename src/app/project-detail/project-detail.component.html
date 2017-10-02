@@ -1,12 +1,39 @@
-<swiper #swiper [config]="swiperConfig">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide text-center" *ngFor="let slide of project.slides">
-      <img [src]="slide.posterUrl">
+<div class="row">
+  <div class="col-xs-12 col-lg-3 d-flex flex-column justify-content-between">
+    <div>
+      <h2>{{project.name}}</h2>
+      <a target="_blank" href="{{project.link}}">{{project.link}}</a>
+      <p>{{project.description}}</p>
+    </div>
+    <div class="techno-list d-flex justify-content-between align-items-center">
+      <img *ngFor="let techno of project.technos" [src]="techno.posterUrl">
     </div>
   </div>
-  <!-- Add Pagination -->
-  <div class="swiper-pagination"></div>
-  <!-- Add Arrows -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-</swiper>
+
+  <div class="col-xs-12 col-lg-9 flex-first flex-lg-unordered image-gallery">
+    <div (swipeleft)="nextSlide()" (swiperight)="prevSlide()" [@slideOut]="fullscreen ? 'idle': slideState" (@slideOut.done)="onSlideAnimOut($event)">
+      <img #imageSlide *ngFor="let slide of project.slides; index as i" class="image-slide" [src]="slide.posterUrl" [hidden]="i !== currentSlideIndex"
+        (click)="nextSlide($event)">
+    </div>
+    <div class="actions">
+      <button (click)="prevSlide($event)" type="button" class="action-btn fa fa-arrow-left" aria-hidden="true"></button>
+      <button (click)="nextSlide($event)" type="button" class="action-btn fa fa-arrow-right" aria-hidden="true"></button>
+      <button (click)="toogleFullscreen()" type="button" class="action-btn fa fa-arrows-alt" aria-hidden="true"></button>
+    </div>
+
+    <div (click)="toogleFullscreen();$event.stopPropagation();" class="image-gallery-fullscreen d-flex flex-column justify-content-between align-items-center"
+      *ngIf="fullscreen">
+      <button (click)="toogleFullscreen()" type="button" class="close-btn fa fa-times" aria-hidden="true"></button>
+      <div class="d-flex justify-content-between align-items-center">
+        <button (click)="prevSlide($event);$event.stopPropagation();" type="button" class="action-btn fa fa-chevron-left" aria-hidden="true"></button>
+        <div (swipeleft)="nextSlide()" (swiperight)="prevSlide()" [@slideOut]="slideState" (@slideOut.done)="onSlideAnimOut($event)"
+          class="image-wrapper">
+          <img #fullScreenSlide *ngFor="let slide of project.slides; index as i" class="image-slide" [src]="slide.posterUrl" [hidden]="i !== currentSlideIndex"
+            (click)="nextSlide($event);$event.stopPropagation();">
+        </div>
+        <button (click)="nextSlide($event);$event.stopPropagation();" type="button" class="action-btn fa fa-chevron-right" aria-hidden="true"></button>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>

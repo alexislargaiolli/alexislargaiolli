@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AnimationService } from './../services/animation.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WorksComponent } from './works.component';
@@ -8,9 +10,13 @@ describe('WorksComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorksComponent ]
+      declarations: [WorksComponent],
+      providers: [
+        { provide: AnimationService, useValue: '' },
+        { provide: Router, useValue: RouterStub },
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,3 +29,7 @@ describe('WorksComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+class RouterStub {
+  navigateByUrl(url: string) { return url; }
+}
