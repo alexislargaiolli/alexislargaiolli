@@ -1,25 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
 // Core variables and mixins
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
+@import "./libs/bootstrap/scss/variables";
+@import "./libs/bootstrap/scss/mixins";
 // Reset and dependencies
-@import "../node_modules/bootstrap/scss/normalize";
-@import "../node_modules/bootstrap/scss/print";
+@import "./libs/bootstrap/scss/normalize";
+@import "./libs/bootstrap/scss/print";
 // Core CSS
-@import "../node_modules/bootstrap/scss/reboot";
-@import "../node_modules/bootstrap/scss/type";
-@import "../node_modules/bootstrap/scss/images";
-@import "../node_modules/bootstrap/scss/code";
-@import "../node_modules/bootstrap/scss/grid";
-@import "../node_modules/bootstrap/scss/tables";
-@import "../node_modules/bootstrap/scss/forms";
-@import "../node_modules/bootstrap/scss/buttons";
+@import "./libs/bootstrap/scss/reboot";
+@import "./libs/bootstrap/scss/type";
+@import "./libs/bootstrap/scss/images";
+@import "./libs/bootstrap/scss/code";
+@import "./libs/bootstrap/scss/grid";
+@import "./libs/bootstrap/scss/tables";
+@import "./libs/bootstrap/scss/forms";
+@import "./libs/bootstrap/scss/buttons";
 // Components
-@import "../node_modules/bootstrap/scss/transitions";
-@import "../node_modules/bootstrap/scss/navbar";
-@import "../node_modules/bootstrap/scss/utilities";
-@import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "./libs/bootstrap/scss/transitions";
+@import "./libs/bootstrap/scss/navbar";
+@import "./libs/bootstrap/scss/utilities";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 html,
 body {
   height: 100%;
