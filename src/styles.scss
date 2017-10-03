@@ -26,8 +26,20 @@ body {
   overflow-x: hidden;
 }
 
+body,
+.mat-form-field,
+.mat-button,
+.mat-fab,
+.mat-icon-button,
+.mat-mini-fab,
+.mat-raised-button {
+  font-family: 'Lato', sans-serif;
+}
+
 .home-title {
-  font-size: 30px;
+  font-size: 25px;
+  font-family: 'Anton', sans-serif;
+  color:#555!important;
 }
 
 .project-title {
@@ -42,12 +54,18 @@ h4 {
   margin: 0;
 }
 
-.back-icon {
+a.back-icon {
   font-size: 28px;
   margin-right: 20px;
   text-decoration: none;
+  color:#4285f4!important;
 }
 
-.back-icon:hover {
+a.back-icon:hover {
   text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
 }

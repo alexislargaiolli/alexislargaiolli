@@ -2,3 +2,30 @@
   padding-top: 10%;
   display: block;
 }
+
+h1,
+h2 {
+  font-family: 'Anton', sans-serif; // font-family: 'Ubuntu', sans-serif;
+  // font-family: 'Lobster', cursive; 
+  // font-family: 'Bevan', cursive;
+}
+
+h1{
+  color:#222;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+h2, p{
+  color:#555;
+}
+
+nav {
+  text-align: right;
+  a:not(:last-child) {
+    margin-right: 30px;
+  }
+}

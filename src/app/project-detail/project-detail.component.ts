@@ -162,9 +162,15 @@ export class ProjectDetailComponent implements OnInit, OnDestroy, AfterViewInit,
       const leaveAnimMetadata = this._animationService.createScaleTranslateAnimationMetadata(finalRect, initialRect, currentRect,
         EasingEnum.easeInCubic, EasingEnum.easeInCubic, EasingEnum.easeInCubic, EasingEnum.easeInCubic);
 
-      this.leaveAnim = this._builder.build(query('.image-slide:first-child', [
+      this.leaveAnim = this._builder.build([
+        query('h2, a, p, .techno-list', [
+          style({ opacity: 1 }),
+          animate('100ms ease-in', style({opacity: 0}))
+        ]),
+        query('.image-slide:first-child', [
         ...leaveAnimMetadata
-      ])).create(this._hostElement.nativeElement);
+        ])
+      ]).create(this._hostElement.nativeElement);
     }
     metadatas.push(
       query('h2, a, p, .techno-list', [

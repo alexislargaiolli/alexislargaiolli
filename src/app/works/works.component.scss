@@ -1,5 +1,6 @@
+
 :host {
-  padding: 20px 0;
+  padding-top: 5%;
   height: 100%;
   display: block;
   &>.container {
@@ -30,8 +31,10 @@ nav {
   height: -moz-calc(100% - 60px);
   height: -webkit-calc(100% - 60px);
   height: calc(100% - 60px);
+  padding-bottom: 15px;
   overflow-y: auto;
   overflow-x: hidden;
+  align-items:flex-start;
   &.hidden {
     opacity: 0;
   }
@@ -39,8 +42,20 @@ nav {
     opacity: 0;
     padding-top: 15px;
     padding-bottom: 15px;
+    
+    &>div{
+      overflow:hidden;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    }
     img {
+      cursor:pointer;
       max-width: 100%;
+      transition:200ms transform;
+      transition-timing-function: ease-in-out;
+    }
+    img:hover{
+      transform:scale(1.05);
     }
   }
 }
