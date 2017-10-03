@@ -3,7 +3,6 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ClientsComponent } from './clients/clients.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { WorksComponent } from './works/works.component';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -38,14 +37,8 @@ const routes: Routes = [
     component: ClientsComponent,
     data: {
       animation: 'clients'
-    }
-  },
-  {
-    path: 'about',
-    component: AboutComponent,
-    data: {
-      animation: 'about'
-    }
+    },
+    canDeactivate: [CanDesactivate]
   },
   {
     path: 'contact',

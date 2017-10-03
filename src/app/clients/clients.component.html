@@ -1,14 +1,17 @@
-<!-- <div class="container">
-  <section>
-    <h2>Clients</h2>
-    <div class="row">
-      <div *ngFor="let client of clients" class="col-12 col-md-6">
-        <article>
-          <h3>{{client.name}}</h3>
-          <span>{{client.subtitle}}</span>
-          <p>{{client.reference}}</p>
-        </article>
-      </div>
-    </div>
+<div class="container">
+  <nav>
+    <a (click)="back()" class="back-button back-icon fa fa-arrow-circle-left" aria-hidden="true"></a>
+    <h1 #title class="home-title">Mes clients</h1>
+  </nav>
+
+  <section class="client-list row pt-4">
+
+    <article *ngFor="let client of clients" class="client-list-item col-xs-12 col-sm-4">
+      <h3>{{client.name}}</h3>
+      <span>{{client.subtitle}}</span>
+      <p>{{client.reference}}</p>
+    </article>
+
   </section>
-</div> -->
+
+</div>
