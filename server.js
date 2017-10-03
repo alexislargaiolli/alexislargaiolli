@@ -23,7 +23,7 @@ const forceSSL = function () {
 // Instruct the app
 // to use the forceSSL
 // middleware
-// app.use(forceSSL());
+app.use(forceSSL());
 
 app.use(bodyParser.json())
 // Run the app by serving the static files
@@ -38,7 +38,7 @@ nodemailer.createTestAccount((err, account) => {
   // create reusable transporter object using the default SMTP transport
   transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 587,
+    port: 465,
     secure: false, // true for 465, false for other ports
     auth: {
       user: process.env.SMTP_USER,
@@ -65,8 +65,10 @@ app.post('/contact', function (req, res) {
     html: `<p>Vous avez reçu un message de ${name} (email : ${email}${tel ? ', Tél : ' + tel: ''})</p>
     <p>${content}</p>`
   };
+  console.log(message);
   transporter.sendMail(message, (err) => {
     if (err) {
+      console.err(err);
       return res.status(500).send('Error while sending mail.');
     }
     res.send(200);
