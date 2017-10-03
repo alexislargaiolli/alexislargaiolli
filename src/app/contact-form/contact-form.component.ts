@@ -53,24 +53,20 @@ export class ContactFormComponent implements OnDestroy, AfterViewInit, CanCompon
   sendMessage(form: NgForm) {
     if (form.valid) {
       this.status = this.STATUS_SENDING;
-      setTimeout(() => {
-        this.status = this.STATUS_SUCCESS;
-      }, 2000);
-      this.http.post('/api/developers/add', form.value)
+      this.http.post('/contact', form.value)
         .subscribe(res => {
-          console.log(res);
-          // status = this.STATUS_SENT;
+          this.status = this.STATUS_SUCCESS;
         }, (error: HttpErrorResponse) => {
           console.log(error.statusText);
-          console.log(this.status);
+          this.status = this.STATUS_ERROR;
         });
     }
   }
 
   reset(form: NgForm) {
-    this.status = this.STATUS_IDLE;
     form.reset();
     form.resetForm();
+    this.status = this.STATUS_IDLE;
   }
 
   public canDeactivate(): Promise<boolean> {

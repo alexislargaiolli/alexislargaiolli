@@ -9,11 +9,11 @@
     <div class="idle-container" *ngIf="status === STATUS_IDLE">
       <md-form-field>
         <span mdPrefix><md-icon>person</md-icon></span>
-        <input mdInput type="text" name="name" ngModel placeholder="Votre nom">
+        <input mdInput type="text" name="name" ngModel placeholder="Votre nom" required>
       </md-form-field>
       <md-form-field>
         <span mdPrefix><md-icon>email</md-icon></span>
-        <input mdInput type="email" name="email" ngModel placeholder="Votre adresse email">
+        <input mdInput type="email" name="email" email ngModel placeholder="Votre adresse email" required>
       </md-form-field>
       <md-form-field>
         <span mdPrefix><md-icon>phone</md-icon></span>
@@ -21,7 +21,7 @@
       </md-form-field>
       <md-form-field class="project-content">
         <span mdPrefix><md-icon>lightbulb_outline</md-icon></span>
-        <textarea mdInput name="content" rows="4" ngModel placeholder="Que recherchez-vous ? Décrivez simplement votre projet..."></textarea>
+        <textarea required mdInput name="content" rows="4" ngModel placeholder="Que recherchez-vous ? Décrivez simplement votre projet..."></textarea>
       </md-form-field>
       <div class="text-right">
         <button type="submit" md-raised-button class="send-btn">Envoyer</button>
