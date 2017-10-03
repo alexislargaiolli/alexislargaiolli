@@ -66,7 +66,7 @@ app.post('/contact', function (req, res) {
       console.log(err);
       return res.status(500).send('Error while sending mail.');
     }
-    res.send(200);
+    res.send({});
   });
 });
 
