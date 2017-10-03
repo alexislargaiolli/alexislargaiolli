@@ -99,7 +99,7 @@ export const contactFormAnim: AnimationMetadata =
                 transform: 'translateX(0%)'
             })),
             query(':leave > *', [
-                stagger('100ms', animate('200ms ease-in-out', style({ opacity: 0, transform: 'translateX(5%)' }))),
+                stagger('40ms', animate('100ms ease-in', style({ opacity: 0, transform: 'translateX(5%)' }))),
             ], { optional: true }),
 
             query(':enter md-icon, :enter span, :enter button', style({
@@ -107,8 +107,8 @@ export const contactFormAnim: AnimationMetadata =
                 transform: 'translateX(-5%)'
             })),
             query(':enter md-icon, :enter span, :enter button', [
-                stagger('50ms',
-                    animate('300ms ease-in-out', style({ opacity: 1, transform: 'translateX(0%)' }))
+                stagger('40ms',
+                    animate('150ms ease-out', style({ opacity: 1, transform: 'translateX(0%)' }))
                 )
             ], { optional: true }),
         ]),
@@ -123,7 +123,7 @@ export const contactFormAnim: AnimationMetadata =
             })),
 
             query(':leave md-icon, :leave span, :leave button', [
-                stagger('50ms', animate('150ms ease-in-out', style({ opacity: 0, transform: 'translateX(5%)' }))),
+                stagger('50ms', animate('100ms ease-in', style({ opacity: 0, transform: 'translateX(5%)' }))),
             ], { optional: true }),
 
             query(':enter', style({
@@ -131,7 +131,7 @@ export const contactFormAnim: AnimationMetadata =
                 transform: 'translateX(-5%)'
             })),
             query(':enter', [
-                stagger('100ms', animate('300ms ease-in-out', style({ opacity: 1, transform: 'translateX(0%)' })))
+                stagger('40ms', animate('150ms ease-out', style({ opacity: 1, transform: 'translateX(0%)' })))
             ], { optional: true }),
         ]),
     ]);

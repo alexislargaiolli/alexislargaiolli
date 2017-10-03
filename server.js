@@ -43,24 +43,20 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/contact', function (req, res) {
-  console.log('/contact');
   const name = req.body.name;
   const email = req.body.email;
   const tel = req.body.tel;
   const content = req.body.content;
-  console.log(req.body);
   if (name === undefined || email === undefined || content === undefined) {
     return res.sendStatus(500);
   }
   var message = {
     from: process.env.SMTP_USER,
     to: process.env.CONTACT_MAIL,
-    subject: `Contact de ${name}`,
-    text: 'Plaintext version of the message',
-    html: `<p>Vous avez reçu un message de ${name} (email : ${email}${tel ? ', Tél : ' + tel: ''})</p>
+    subject: `${name} vous a contacté`,
+    html: `<p>Vous avez reçu un message de <strong>${name}</strong> (email : <strong>${email}</strong>${tel ? ', Tél : <strong>' + tel + '</strong>': ''})</p>
     <p>${content}</p>`
   };
-  console.log(message);
   transporter.sendMail(message, (err) => {
     if (err) {
       console.log(err);

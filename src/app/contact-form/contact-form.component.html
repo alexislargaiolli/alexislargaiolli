@@ -21,7 +21,7 @@
       </md-form-field>
       <md-form-field class="project-content">
         <span mdPrefix><md-icon>lightbulb_outline</md-icon></span>
-        <textarea required mdInput name="content" rows="4" ngModel placeholder="Que recherchez-vous ? Décrivez simplement votre projet..."></textarea>
+        <textarea required mdInput name="content" rows="8" ngModel placeholder="Que recherchez-vous ? Décrivez simplement votre projet..."></textarea>
       </md-form-field>
       <div class="text-right">
         <button type="submit" md-raised-button class="send-btn">Envoyer</button>
@@ -53,7 +53,7 @@
         </div>
         <span class="text-justify">Une erreur est survenue pendant l'envoie.</span>
       </div>
-      <button class="mt-4" md-raised-button>Réessayer</button>
+      <button class="mt-4" (click)="contactForm.submit()" md-raised-button>Réessayer</button>
     </div>
 
   </form>

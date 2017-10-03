@@ -56,14 +56,9 @@ export class ContactFormComponent implements OnDestroy, AfterViewInit, CanCompon
       this.http.post('/contact', form.value)
         .subscribe(
         (res) => {
-          console.log('SUCCESS');
-          console.log(res);
           this.status = this.STATUS_SUCCESS;
         },
         (error: HttpErrorResponse) => {
-          console.log('ERROR');
-          console.log(error.status);
-          console.log(error.statusText);
           this.status = this.STATUS_ERROR;
         }
         );

@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   constructor(private _router: Router) {
-    // this._router.navigate(['/home']);
+    this._router.navigate(['/home']);
   }
 
   prepRouteState(outlet: any) {
