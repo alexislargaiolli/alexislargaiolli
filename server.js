@@ -32,19 +32,14 @@ app.use(express.static(__dirname + '/dist'));
 // Start the app by listening on the default
 // Heroku port
 
-let transporter;
-
-nodemailer.createTestAccount((err, account) => {
-  // create reusable transporter object using the default SMTP transport
-  transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // true for 465, false for other ports
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PWD
-    }
-  });
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true, // true for 465, false for other ports
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PWD
+  }
 });
 
 app.post('/contact', function (req, res) {
@@ -68,7 +63,7 @@ app.post('/contact', function (req, res) {
   console.log(message);
   transporter.sendMail(message, (err) => {
     if (err) {
-      console.err(err);
+      console.log(err);
       return res.status(500).send('Error while sending mail.');
     }
     res.send(200);
