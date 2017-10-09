@@ -1,3 +1,4 @@
+@import '../../variables';
 :host {
   padding-top: 10%;
   display: block;
@@ -10,8 +11,8 @@ h2 {
   // font-family: 'Bevan', cursive;
 }
 
-h1{
-  color:#222;
+h1 {
+  color: $title-color;
 }
 
 h2 {
@@ -19,8 +20,13 @@ h2 {
   margin: 10px 0;
 }
 
-h2, p{
-  color:#555;
+h2 {
+  color: $accent-color;
+  ;
+}
+
+p {
+  color: #555;
 }
 
 nav {

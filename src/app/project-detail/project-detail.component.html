@@ -1,12 +1,12 @@
 <div class="row">
-  <div class="col-xs-12 col-lg-3 d-flex flex-column justify-content-between">
+  <div class="col-xs-12 col-lg-3 d-flex flex-column justify-content-between project-info">
     <div>
       <h2>{{project.name}}</h2>
-      <a target="_blank" href="{{project.link}}">{{project.link}}</a>
+      <a target="_blank" href="{{project.link}}"><i class="fa fa-link" aria-hidden="true"></i>{{project.link | link}}</a>
       <p>{{project.description}}</p>
     </div>
     <div class="techno-list d-flex justify-content-between align-items-center">
-      <img *ngFor="let techno of project.technos" [src]="techno.posterUrl">
+      <img *ngFor="let techno of project.technos" [src]="techno.posterUrl" [mdTooltip]="techno.name">
     </div>
   </div>
 

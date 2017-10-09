@@ -1,3 +1,4 @@
+import { LinkPipe } from './utils/link.pipe';
 import { CanDesactivate } from './component.guard';
 import { AnimationService } from './services/animation.service';
 import { AppRoutes } from './app.routing';
@@ -11,9 +12,7 @@ import { MdButtonModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { WorksComponent } from './works/works.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
-import { MdIconModule } from '@angular/material';
-import { MdInputModule } from '@angular/material';
-import { MdProgressBarModule } from '@angular/material';
+import { MdIconModule, MdInputModule, MdProgressBarModule, MatTooltipModule } from '@angular/material';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { HomeComponent } from './home/home.component';
 import { ClientsComponent } from './clients/clients.component';
@@ -26,6 +25,7 @@ import { ClientsComponent } from './clients/clients.component';
     ContactFormComponent,
     HomeComponent,
     ClientsComponent,
+    LinkPipe
   ],
   imports: [
     BrowserModule,
@@ -36,7 +36,8 @@ import { ClientsComponent } from './clients/clients.component';
     MdButtonModule,
     MdInputModule,
     MdIconModule,
-    MdProgressBarModule
+    MdProgressBarModule,
+    MatTooltipModule
   ],
   providers: [
     AnimationService,

@@ -5,9 +5,17 @@
   </nav>
 
   <div class="row project-list" [ngClass]="{'hidden': hideList}">
-    <div *ngFor="let project of projects" (click)="selectProject(project, projectTitle, projectImage)" class="project-list-item project-{{project.id}} col-xs-12 col-md-6">
-      <div>
-        <img #projectImage [src]="project.slides[0].posterUrl">
+    <div *ngFor="let project of projects" class="col-xs-12 col-md-6">
+      <div (click)="selectProject(project, projectTitle, projectImage)" class="project-list-item project-{{project.id}}">
+        <div class="project-list-item-image">
+          <img #projectImage [src]="project.slides[0].posterUrl">
+          <!-- <div #projectImage [ngStyle]="{'background': 'url(' + project.slides[0].posterUrl +')', 'background-position' : 'top center', 'background-size': 'cover'}"
+          class="project-list-item-image"></div> -->
+        </div>
+        <div class="project-list-item-title">
+          <h2>{{project.name}}</h2>
+          <span>{{project.subtitle}}</span>
+        </div>
       </div>
     </div>
   </div>

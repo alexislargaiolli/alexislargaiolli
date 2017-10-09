@@ -159,7 +159,7 @@ export class WorksComponent implements OnDestroy, AfterViewInit, CanComponentDea
       const titleAnim = this._animationService.createTranslationAnimationMetadata(initialTitlePosition, currentPosition, currentPosition,
         EasingEnum.linear, EasingEnum.easeInCubic, 10, 200);
       this.enterAnim = this._builder.build([
-        query('.back-button', style({ opacity: 0 })),
+        query('.back-button, .project-list-item', style({ opacity: 0 })),
         query('.home-title', titleAnim),
         query('.back-button', animate('100ms ease-out', style({ opacity: 1 }))),
         query('.project-list-item', [

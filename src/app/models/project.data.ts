@@ -12,7 +12,7 @@ export const PROJECTS: Project[] = [
         posterUrl: 'assets/projects/wal/wal.jpg',
         slides: [
             {
-                posterUrl: 'assets/projects/wal/wal-1.jpg'
+                posterUrl: 'assets/projects/wal/wal-1.png'
             },
             {
                 posterUrl: 'assets/projects/wal/wal-2.jpg'
@@ -27,11 +27,11 @@ export const PROJECTS: Project[] = [
                 posterUrl: 'assets/technos/j2ee.jpg'
             },
             {
-                name: 'hibernate',
+                name: 'Hibernate',
                 posterUrl: 'assets/technos/hibernate.jpg'
             },
             {
-                name: 'mysql',
+                name: 'MySQL',
                 posterUrl: 'assets/technos/mysql.jpg'
             }
         ]

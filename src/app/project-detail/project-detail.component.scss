@@ -1,36 +1,63 @@
+@import '../../variables';
+@media (max-width: 1199px) {
+  .project-info {
+    margin-top: 15px;
+  }
+}
+
 .image-slide {
   max-width: 100%;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+  @include white-frame-1();
+  @include border-radius(2px);
 }
 
-p {
-  text-align: justify;
-}
-
-a {
-  display: block;
-}
-
-h2,
-a,
-p,
-.techno-list {
-  opacity: 0;
+.project-info {
+  h2 {
+    font-size: 20px;
+    color: $title-color;
+  }
+  p {
+    text-align: justify;
+    color: $text-color;
+  }
+  a {
+    margin: 5px 0;
+    display: block;
+    color: $accent-color;
+    i {
+      color: $text-color;
+      margin-right: 5px;
+    }
+  }
+  h2,
+  a,
+  p,
+  .techno-list {
+    opacity: 0;
+  }
 }
 
 .image-gallery {
   .actions {
-    height: 30px;
-    margin-top: -30px;
-    line-height: 30px;
+    height: 45px;
+    margin-top: -45px;
+    line-height: 45px;
     text-align: right;
     position: relative;
+    font-size: 0;
   }
   .action-btn {
-    background: rgba(26, 26, 26, 0.2);
-    padding: 5px 5px;
+    background: rgba(26, 26, 26, 0.5);
+    color: #fff;
+    padding: 10px;
+    margin-right: 5px;
+    font-size: 20px;
     border-radius: 2px;
     border: none;
+    @include white-frame-1();
+    &:hover {
+      @include white-frame-2();
+    }
   }
   .image-wrapper {
     overflow: hidden;

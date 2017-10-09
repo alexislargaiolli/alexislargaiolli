@@ -165,10 +165,10 @@ export class ProjectDetailComponent implements OnInit, OnDestroy, AfterViewInit,
       this.leaveAnim = this._builder.build([
         query('h2, a, p, .techno-list', [
           style({ opacity: 1 }),
-          animate('100ms ease-in', style({opacity: 0}))
+          animate('100ms ease-in', style({ opacity: 0 }))
         ]),
         query('.image-slide:first-child', [
-        ...leaveAnimMetadata
+          ...leaveAnimMetadata
         ])
       ]).create(this._hostElement.nativeElement);
     }
