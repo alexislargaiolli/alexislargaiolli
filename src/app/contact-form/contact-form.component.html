@@ -38,8 +38,8 @@
           <md-progress-bar mode="indeterminate"></md-progress-bar>
         </div>
 
-        <div class="d-flex justify-content-around align-items-center" *ngIf="status === STATUS_SUCCESS">
-          <div class="icon-stack">
+        <div class="d-flex justify-content-center align-items-center" *ngIf="status === STATUS_SUCCESS">
+          <div class="icon-stack mr-4">
             <md-icon>mail</md-icon>
             <md-icon class="text-success">check_circle</md-icon>
           </div>
@@ -49,14 +49,14 @@
           </div>
         </div>
 
-        <div class="d-flex justify-content-around align-items-center" *ngIf="status === STATUS_ERROR">
-          <div class="icon-stack">
+        <div class="d-flex justify-content-center align-items-center" *ngIf="status === STATUS_ERROR">
+          <div class="icon-stack mr-4">
             <md-icon>mail</md-icon>
             <md-icon class="text-danger">error_outline</md-icon>
           </div>
           <div class="d-flex flex-column justify-content-between align-items-center">
             <p class="text-justify">Une erreur est survenue pendant l'envoie.</p>
-            <button class="mt-4" (click)="contactForm.submit()" md-raised-button>Réessayer</button>
+            <button class="mt-4" (click)="sendMessage(contactForm)" md-raised-button>Réessayer</button>
           </div>
         </div>
 
