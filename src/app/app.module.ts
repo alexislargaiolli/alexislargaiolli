@@ -7,12 +7,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule } from '@angular/material';
-
 import { AppComponent } from './app.component';
 import { WorksComponent } from './works/works.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
-import { MdIconModule, MdInputModule, MdProgressBarModule, MatTooltipModule } from '@angular/material';
+import { MdIconModule, MdInputModule, MdProgressBarModule, MatTooltipModule, MdButtonModule } from '@angular/material';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { HomeComponent } from './home/home.component';
 import { ClientsComponent } from './clients/clients.component';
