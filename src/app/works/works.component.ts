@@ -11,7 +11,7 @@ import {
 import { Location, PlatformLocation } from '@angular/common';
 import {
   OnInit, Component, ViewChild, ElementRef, AfterViewInit, OnDestroy,
-  ChangeDetectorRef, ViewChildren, QueryList
+  ChangeDetectorRef, ViewChildren, QueryList, HostListener
 } from '@angular/core';
 import { AnimationService } from './../services/animation.service';
 import { CLIENTS } from './../models/client.data';
@@ -147,6 +147,11 @@ export class WorksComponent implements OnDestroy, AfterViewInit, CanComponentDea
     this.routerSubscription.unsubscribe();
   }
 
+  @HostListener('window:scroll', ['$event'])
+  public onWindowScroll(event: Event): void {
+    console.log('scrolled');
+  }
+
 
   // -------------------------------------//
   // -------- ANIMATION BUILDING ---------//
@@ -196,7 +201,7 @@ export class WorksComponent implements OnDestroy, AfterViewInit, CanComponentDea
     this.selectProjectAnim = this._builder.build([
       query(`.project-list-item:not(.project-${projectId}), .project-list-item.project-${projectId} h2`, [
         style({ opacity: 1 }),
-        animate('150ms ease-in', style({ opacity: 0 })),
+        animate('100ms ease-in', style({ opacity: 0 })),
       ])
     ]).create(this._hostElement.nativeElement);
   }

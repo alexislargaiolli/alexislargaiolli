@@ -19,7 +19,7 @@
 @import "./libs/bootstrap/scss/transitions";
 @import "./libs/bootstrap/scss/navbar";
 @import "./libs/bootstrap/scss/utilities";
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "theme";
 @import 'variables';
 html,
 body {
@@ -39,7 +39,7 @@ body,
 
 .home-title {
   font-size: 25px;
-  font-family: 'Anton', sans-serif;
+  font-family: $font-title;
   color: $title-color!important;
 }
 

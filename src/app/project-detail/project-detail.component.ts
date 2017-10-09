@@ -148,6 +148,14 @@ export class ProjectDetailComponent implements OnInit, OnDestroy, AfterViewInit,
   private buildAnim() {
     const metadatas: AnimationMetadata[] = [];
     const initialRect = this._animationService.getData(AnimationService.SELECTED_PROJECT_IMAGE_POSITION_KEY);
+    metadatas.push(
+      query('h2, a, p, .techno-list img', [
+        style({ opacity: 0, transform: 'translateX(-10%)' }),
+      ]),
+      query('.actions', [
+        style({ opacity: 0 }),
+      ])
+    );
     if (initialRect) {
       const finalRect = this.imageSlides.first.nativeElement.getBoundingClientRect();
       const currentRect = finalRect;
@@ -163,7 +171,7 @@ export class ProjectDetailComponent implements OnInit, OnDestroy, AfterViewInit,
         EasingEnum.easeInCubic, EasingEnum.easeInCubic, EasingEnum.easeInCubic, EasingEnum.easeInCubic);
 
       this.leaveAnim = this._builder.build([
-        query('h2, a, p, .techno-list', [
+        query('h2, a, p, .techno-list img, .actions', [
           style({ opacity: 1 }),
           animate('100ms ease-in', style({ opacity: 0 }))
         ]),
@@ -172,13 +180,12 @@ export class ProjectDetailComponent implements OnInit, OnDestroy, AfterViewInit,
         ])
       ]).create(this._hostElement.nativeElement);
     }
+
     metadatas.push(
-      query('h2, a, p, .techno-list', [
-        style({ opacity: 0, transform: 'translateX(-10%)' }),
-      ])
-    );
-    metadatas.push(
-      query('h2, a, p, .techno-list', [
+      query('.actions', [
+        animate('150ms ease-out', style({ opacity: 1 }))
+      ]),
+      query('h2, a, p, .techno-list img', [
         stagger(40,
           animate('150ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
         )

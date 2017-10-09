@@ -38,6 +38,9 @@ export class ContactFormComponent implements OnDestroy, AfterViewInit, CanCompon
     private _hostElement: ElementRef
   ) {
     this.status = this.STATUS_IDLE;
+    // this.status = this.STATUS_SUCCESS;
+    // this.status = this.STATUS_ERROR;
+    // this.status = this.STATUS_SENDING;
   }
 
   /**
@@ -53,6 +56,9 @@ export class ContactFormComponent implements OnDestroy, AfterViewInit, CanCompon
   sendMessage(form: NgForm) {
     if (form.valid) {
       this.status = this.STATUS_SENDING;
+      // setTimeout(() => {
+      //   this.status = this.STATUS_SUCCESS;
+      // }, 2000);
       this.http.post('/contact', form.value)
         .subscribe(
         (res) => {
@@ -109,11 +115,11 @@ export class ContactFormComponent implements OnDestroy, AfterViewInit, CanCompon
       const titleAnim = this._animationService.createTranslationAnimationMetadata(initialTitlePosition, currentPosition, currentPosition,
         EasingEnum.linear, EasingEnum.easeInCubic, 10, 200);
       this.enterAnim = this._builder.build([
-        query('.back-button, h2, md-form-field, .send-btn', style({ opacity: 0 })),
+        query('.back-button, .link-panel a, md-form-field, .send-btn', style({ opacity: 0 })),
         query('.home-title', titleAnim),
-        query('.back-button, h2', animate('100ms ease-out', style({ opacity: 1 }))),
-        query('md-form-field, .send-btn', style({ transform: 'translateX(-5%)' })),
-        query('md-form-field, .send-btn',
+        query('.back-button', animate('100ms ease-out', style({ opacity: 1 }))),
+        query('md-form-field, .link-panel a, .send-btn', style({ transform: 'translateX(-5%)' })),
+        query('md-form-field, .link-panel a, .send-btn',
           stagger('40ms', animate('100ms ease-out', style({ opacity: 1, transform: 'translateX(0)' })))
         )
       ]).create(this._hostElement.nativeElement);
@@ -127,7 +133,7 @@ export class ContactFormComponent implements OnDestroy, AfterViewInit, CanCompon
       const titleAnim = this._animationService.createTranslationAnimationMetadata(currentPosition, finalTitlePosition, currentPosition,
         EasingEnum.linear, EasingEnum.easeOutCubic);
       this.leaveAnim = this._builder.build([
-        query('.back-button, h2, md-form-field, .send-btn', animate('150ms ease-in', style({ opacity: 0 }))),
+        query('.back-button, .container>.row', animate('150ms ease-in', style({ opacity: 0 }))),
         query('.home-title', titleAnim),
       ]).create(this._hostElement.nativeElement);
     }

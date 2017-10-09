@@ -7,7 +7,7 @@
 
 .image-slide {
   max-width: 100%;
-  @include white-frame-1();
+  @include white-frame-2();
   @include border-radius(2px);
 }
 
@@ -28,12 +28,6 @@
       color: $text-color;
       margin-right: 5px;
     }
-  }
-  h2,
-  a,
-  p,
-  .techno-list {
-    opacity: 0;
   }
 }
 

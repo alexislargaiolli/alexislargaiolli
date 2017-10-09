@@ -6,17 +6,6 @@ import {
 // Component transition animations
 export const contactFormAnim: AnimationMetadata =
     trigger('contactFormAnim', [
-        transition('void => *', [
-
-            query(':enter', [
-                style({
-                    opacity: 0,
-                    transform: 'translateX(-5%)'
-                }),
-                animate('150ms ease-out', style({ opacity: 1, transform: 'translateX(0%)' }))
-            ], { optional: true }),
-
-        ]),
         transition('IDLE => SENDING', [
 
             query(':enter', style({ opacity: 0 })),
@@ -41,7 +30,7 @@ export const contactFormAnim: AnimationMetadata =
 
         transition('SENDING => SUCCESS', [
 
-            query(':enter md-icon, :enter span, :enter button', style({ opacity: 0 }), { optional: true }),
+            query(':enter md-icon, :enter p, :enter button', style({ opacity: 0 }), { optional: true }),
             query(':leave', style({ position: 'absolute' })),
 
             query(':leave > *', style({
@@ -52,11 +41,11 @@ export const contactFormAnim: AnimationMetadata =
                 stagger('40ms', animate('100ms ease-in', style({ opacity: 0, transform: 'translateX(5%)' }))),
             ], { optional: true }),
 
-            query(':enter md-icon, :enter span, :enter button', style({
+            query(':enter md-icon, :enter p, :enter button', style({
                 opacity: 0,
                 transform: 'translateX(-5%)'
             })),
-            query(':enter md-icon, :enter span, :enter button', [
+            query(':enter md-icon, :enter p, :enter button', [
                 stagger('40ms',
                     animate('150ms ease-out', style({ opacity: 1, transform: 'translateX(0%)' }))
                 )
@@ -68,11 +57,11 @@ export const contactFormAnim: AnimationMetadata =
             query(':enter', style({ position: 'absolute', opacity: 0 })),
             query(':leave', style({})),
 
-            query(':leave md-icon, :leave span, :leave button', style({
+            query(':leave md-icon, :leave p, :leave button', style({
                 opacity: 1,
                 transform: 'translateX(0%)'
             })),
-            query(':leave md-icon, :leave span, :leave button', [
+            query(':leave md-icon, :leave p, :leave button', [
                 stagger('40ms', animate('100ms ease-in', style({ opacity: 0, transform: 'translateX(5%)' }))),
             ], { optional: true }),
 
@@ -91,7 +80,7 @@ export const contactFormAnim: AnimationMetadata =
 
         transition('SENDING => ERROR', [
 
-            query(':enter md-icon, :enter span, :enter button', style({ opacity: 0 }), { optional: true }),
+            query(':enter md-icon, :enter p, :enter button', style({ opacity: 0 }), { optional: true }),
             query(':leave', style({ position: 'absolute' })),
 
             query(':leave > *', style({
@@ -102,11 +91,11 @@ export const contactFormAnim: AnimationMetadata =
                 stagger('40ms', animate('100ms ease-in', style({ opacity: 0, transform: 'translateX(5%)' }))),
             ], { optional: true }),
 
-            query(':enter md-icon, :enter span, :enter button', style({
+            query(':enter md-icon, :enter p, :enter button', style({
                 opacity: 0,
                 transform: 'translateX(-5%)'
             })),
-            query(':enter md-icon, :enter span, :enter button', [
+            query(':enter md-icon, :enter p, :enter button', [
                 stagger('40ms',
                     animate('150ms ease-out', style({ opacity: 1, transform: 'translateX(0%)' }))
                 )
@@ -117,12 +106,12 @@ export const contactFormAnim: AnimationMetadata =
 
             query(':enter', style({ opacity: 0, position: 'absolute' })),
 
-            query(':leave md-icon, :leave span, :leave button', style({
+            query(':leave md-icon, :leave p, :leave button', style({
                 opacity: 1,
                 transform: 'translateX(0%)'
             })),
 
-            query(':leave md-icon, :leave span, :leave button', [
+            query(':leave md-icon, :leave p, :leave button', [
                 stagger('50ms', animate('100ms ease-in', style({ opacity: 0, transform: 'translateX(5%)' }))),
             ], { optional: true }),
 

@@ -11,4 +11,5 @@ export class AppComponent {
   constructor(private _router: Router) {
     // this._router.navigate(['/home']);
   }
+
 }

@@ -32,9 +32,6 @@ app.use(bodyParser.json())
 app.use(express.static(__dirname + '/dist'));
 // Start the app by listening on the default
 // Heroku port
-console.log(crypto.createHash('md5').update(process.env.CONTACT_MAIL).digest("hex"));
-console.log(crypto.createHash('md5').update(process.env.SMTP_USER).digest("hex"));
-console.log(crypto.createHash('md5').update(process.env.SMTP_PWD).digest("hex"));
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,

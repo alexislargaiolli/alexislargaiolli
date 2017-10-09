@@ -20,7 +20,6 @@ nav {
 }
 
 .project-list {
-  // display: none;
   position: absolute;
   width: 100%;
   max-height: -moz-calc(100% - 60px);
@@ -41,7 +40,7 @@ nav {
     border-radius: 2px;
     transition: 100ms box-shadow;
     transition-timing-function: ease-out;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    @include white-frame-1();
     cursor: pointer;
     .project-list-item-image {
       overflow: hidden;
@@ -60,9 +59,7 @@ nav {
       max-width: 100%;
     }
     &:hover {
-      // box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
-      // box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
-      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12);
+      @include white-frame-8();
     }
   }
 }

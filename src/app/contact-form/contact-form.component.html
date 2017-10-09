@@ -1,60 +1,66 @@
 <div class="container">
   <nav>
     <a (click)="back()" class="back-button back-icon fa fa-arrow-circle-left" aria-hidden="true"></a>
-    <h1 #title class="home-title">Contactez-moi</h1>
-    <h2>, travaillons ensemble</h2>
+    <h1 #title class="home-title">Me contacter</h1>
   </nav>
-  <form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)" [@contactFormAnim]="status">
-
-    <div class="idle-container" *ngIf="status === STATUS_IDLE">
-      <md-form-field>
-        <span mdPrefix><md-icon>person</md-icon></span>
-        <input mdInput type="text" name="name" ngModel="Alexis" placeholder="Votre nom" required>
-      </md-form-field>
-      <md-form-field>
-        <span mdPrefix><md-icon>email</md-icon></span>
-        <input mdInput type="email" name="email" email ngModel="alexis@test.fr" placeholder="Votre adresse email" required>
-      </md-form-field>
-      <md-form-field>
-        <span mdPrefix><md-icon>phone</md-icon></span>
-        <input mdInput type="tel" name="tel" ngModel="0102030405" placeholder="Votre téléphone">
-      </md-form-field>
-      <md-form-field class="project-content">
-        <span mdPrefix><md-icon>lightbulb_outline</md-icon></span>
-        <textarea required mdInput name="content" rows="8" ngModel="Bonjour, test form contact" placeholder="Que recherchez-vous ? Décrivez simplement votre projet..."></textarea>
-      </md-form-field>
-      <div class="text-right">
-        <button type="submit" md-raised-button class="send-btn">Envoyer</button>
-      </div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-4 d-flex flex-column justify-content-center align-items-center link-panel">
+      <a href="https://www.linkedin.com/in/alexis-largaiolli" target="_blank"><i class="fa fa-linkedin-square linkedin" aria-hidden="true"></i>via Linked In</a>
+      <a href="https://www.hopwork.fr/profile/alexislargaiolli" target="_blank"><img src="assets/hopwork.png">via Hopwork</a>
     </div>
+    <div class="col-xs-12 col-lg-8 flex-first flex-lg-unordered">
+      <form #contactForm="ngForm" (ngSubmit)="sendMessage(contactForm)" [@contactFormAnim]="status">
 
-    <div class="d-flex flex-column justify-content-center" *ngIf="status === STATUS_SENDING">
-      <p>Envoi en cours...</p>
-      <md-progress-bar mode="indeterminate"></md-progress-bar>
-    </div>
-
-    <div class="d-flex flex-column justify-content-center align-items-center" *ngIf="status === STATUS_SUCCESS">
-      <div class="d-flex justify-content-center align-items-center">
-        <div class="icon-stack mr-2">
-          <md-icon>mail</md-icon>
-          <md-icon class="text-success mr-2">check_circle</md-icon>
+        <div class="idle-container" *ngIf="status === STATUS_IDLE">
+          <md-form-field>
+            <span mdPrefix><md-icon>person</md-icon></span>
+            <input mdInput type="text" name="name" ngModel placeholder="Votre nom" required>
+          </md-form-field>
+          <md-form-field>
+            <span mdPrefix><md-icon>email</md-icon></span>
+            <input mdInput type="email" name="email" email ngModel placeholder="Votre adresse email" required>
+          </md-form-field>
+          <md-form-field>
+            <span mdPrefix><md-icon>phone</md-icon></span>
+            <input mdInput type="tel" name="tel" ngModel placeholder="Votre téléphone">
+          </md-form-field>
+          <md-form-field class="project-content">
+            <span mdPrefix><md-icon>lightbulb_outline</md-icon></span>
+            <textarea required mdInput name="content" rows="8" ngModel placeholder="Que recherchez-vous ? Décrivez simplement votre projet..."></textarea>
+          </md-form-field>
+          <div class="text-right">
+            <button type="submit" md-raised-button class="send-btn">Envoyer</button>
+          </div>
         </div>
-        <span>Votre message a bien été envoyé.</span>
-      </div>
-      <span class="mt-4">Vous receverez une réponse dans les 5 heures ouvrées.</span>
-      <button type="button" (click)="reset(contactForm)" class="mt-4" md-raised-button>Envoyer un autre message</button>
-    </div>
 
-    <div class="d-flex flex-column justify-content-center align-items-center" *ngIf="status === STATUS_ERROR">
-      <div class="d-flex justify-content-center align-items-center">
-        <div class="icon-stack mr-2">
-          <md-icon>mail</md-icon>
-          <md-icon class="text-danger">error</md-icon>
+        <div class="d-flex flex-column justify-content-center" *ngIf="status === STATUS_SENDING">
+          <p class="text-center text-sending mb-4">Envoi en cours...</p>
+          <md-progress-bar mode="indeterminate"></md-progress-bar>
         </div>
-        <span class="text-justify">Une erreur est survenue pendant l'envoie.</span>
-      </div>
-      <button class="mt-4" (click)="contactForm.submit()" md-raised-button>Réessayer</button>
-    </div>
 
-  </form>
+        <div class="d-flex justify-content-around align-items-center" *ngIf="status === STATUS_SUCCESS">
+          <div class="icon-stack">
+            <md-icon>mail</md-icon>
+            <md-icon class="text-success">check_circle</md-icon>
+          </div>
+          <div>
+            <p>Votre message a bien été envoyé.</p>
+            <p class="mt-4">Vous receverez une réponse dans les 5 heures ouvrées.</p>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-around align-items-center" *ngIf="status === STATUS_ERROR">
+          <div class="icon-stack">
+            <md-icon>mail</md-icon>
+            <md-icon class="text-danger">error_outline</md-icon>
+          </div>
+          <div class="d-flex flex-column justify-content-between align-items-center">
+            <p class="text-justify">Une erreur est survenue pendant l'envoie.</p>
+            <button class="mt-4" (click)="contactForm.submit()" md-raised-button>Réessayer</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
 </div>

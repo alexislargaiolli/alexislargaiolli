@@ -1,7 +1,10 @@
 $icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 $title-color:#4e4e50;
 $accent-color:#33c3f0;
+$accent-color:#4285f4;
 $text-color: #555;
+$font-title: 'Anton',
+sans-serif;
 @mixin white-frame($param1, $param2, $param3) {
   box-shadow: $param1, $param2, $param3;
   -moz-box-shadow: $param1, $param2, $param3;

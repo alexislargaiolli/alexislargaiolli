@@ -1,10 +1,7 @@
+@import "../../variables";
 :host {
   padding-top: 10%;
   display: block;
-}
-
-.container {
-  max-width: 600px;
 }
 
 .home-title {
@@ -20,8 +17,39 @@ nav {
   margin-bottom: 20px;
 }
 
+.mat-raised-button {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.link-panel {
+  a {
+    margin: 20px 0;
+    text-decoration: none;
+    color: $text-color;
+    transition: 100ms transform;
+    transition-timing-function: ease-in-out;
+    .fa {
+      font-size: 40px;
+    }
+    .linkedin {
+      color: #0077B5;
+    }
+    .fa,
+    img {
+      width: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    &:hover {
+      transform: scale(1.1);
+      transform-origin: center center;
+    }
+  }
+}
+
 form {
-  min-height: 280px;
+  min-height: 426px;
   &>div {
     min-height: 280px;
     width: 100%;
@@ -33,6 +61,19 @@ form {
   md-form-field {
     display: block;
     width: 100%;
+  }
+  .error-icon {
+    font-size: 40px;
+    height: 40px;
+    width: 40px;
+  }
+  p {
+    color: $text-color;
+    margin: 0;
+  }
+  .text-sending {
+    font-family: $font-title;
+    color: $text-color;
   }
 }
 
@@ -51,16 +92,17 @@ form {
 }
 
 .icon-stack {
-  height: 60px;
+  height: 100px;
   md-icon:first-child {
     position: relative;
-    font-size: 60px;
-    width: 60px;
-    height: 60px;
+    font-size: 100px;
+    width: 100px;
+    height: 100px;
+    color: $title-color;
   }
   md-icon:last-child {
     position: absolute;
-    margin-top: -35px;
-    margin-left: 35px;
+    margin-top: -50px;
+    margin-left: 65px;
   }
 }
