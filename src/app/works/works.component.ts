@@ -169,7 +169,7 @@ export class WorksComponent implements OnDestroy, AfterViewInit, CanComponentDea
     if (initialTitlePosition) {
       const currentPosition: BoundingRect = this.titleElement.nativeElement.getBoundingClientRect();
       const titleAnim = this._animationService.createTranslationAnimationMetadata(initialTitlePosition, currentPosition, currentPosition,
-        EasingEnum.linear, EasingEnum.easeInCubic, 10, 200);
+        EasingEnum.linear, EasingEnum.easeInCubic, 10, 300);
       this.enterAnim = this._builder.build([
         query('.back-button, .project-list-item', style({ opacity: 0 })),
         query('.home-title', titleAnim),

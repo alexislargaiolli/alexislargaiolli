@@ -36,9 +36,9 @@
           <a href="https://www.hopwork.fr/profile/alexislargaiolli" target="_blank"><img src="assets/hopwork.png">Hopwork</a>
         </div>
         <nav>
-          <a #workLink (click)="goTo(workLink, '/works')" class="home-title">Réalisations</a>
-          <a #clientsLink (click)="goTo(clientsLink, '/clients')" class="home-title">Mes clients</a>
-          <a #contactLink (click)="goTo(contactLink, '/contact')" class="home-title">Me contacter</a>
+          <a #workLink (click)="goTo(workLink, '/works', 'works')" class="home-title works">Réalisations</a>
+          <a #clientsLink (click)="goTo(clientsLink, '/clients', 'clients')" class="home-title clients">Mes clients</a>
+          <a #contactLink (click)="goTo(contactLink, '/contact', 'contact')" class="home-title contact">Me contacter</a>
         </nav>
       </div>
     </div>
