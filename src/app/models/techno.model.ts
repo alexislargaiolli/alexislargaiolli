@@ -3,4 +3,5 @@ export class Techno {
     // subtitle?: string;
     // description?: string;
     posterUrl: string;
+    link: string;
 }

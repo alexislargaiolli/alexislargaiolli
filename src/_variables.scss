@@ -5,6 +5,7 @@ $accent-color:#4285f4;
 $text-color: #555;
 $font-title: 'Anton',
 sans-serif;
+$footer-height:60px;
 @mixin white-frame($param1, $param2, $param3) {
   box-shadow: $param1, $param2, $param3;
   -moz-box-shadow: $param1, $param2, $param3;

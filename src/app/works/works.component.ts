@@ -55,6 +55,13 @@ export class WorksComponent implements OnDestroy, AfterViewInit, CanComponentDea
         const to = events[1].url;
         if (from.match(/\/works\/\d/i)) {
           this.unselectProject();
+          const previousScroll = this._animationService.getData('scrollTop');
+          console.log('previous ' + previousScroll);
+          if (previousScroll) {
+
+            document.body.scrollTop = previousScroll;
+            this._animationService.removeData('scrollTop');
+          }
         }
         if (to.match(/\/works\/\d/i)) {
           this.hideList = true;

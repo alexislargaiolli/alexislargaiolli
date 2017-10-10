@@ -2,48 +2,11 @@ import { Slide } from './slide.model';
 import { Project } from './project.model';
 export const PROJECTS: Project[] = [
     {
-        id: 1,
-        name: 'WeAreLearning',
-        link: 'https://www.wearelearning.com',
-        subtitle: 'Gestion de projet et développement',
-        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.`,
-        posterUrl: 'assets/projects/wal/wal.jpg',
-        slides: [
-            {
-                posterUrl: 'assets/projects/wal/wal-1.png'
-            },
-            {
-                posterUrl: 'assets/projects/wal/wal-2.jpg'
-            },
-            {
-                posterUrl: 'assets/projects/wal/wal-3.jpg'
-            }
-        ],
-        technos: [
-            {
-                name: 'J2EE',
-                posterUrl: 'assets/technos/j2ee.jpg'
-            },
-            {
-                name: 'Hibernate',
-                posterUrl: 'assets/technos/hibernate.jpg'
-            },
-            {
-                name: 'MySQL',
-                posterUrl: 'assets/technos/mysql.jpg'
-            }
-        ]
-    },
-    {
         id: 2,
         name: 'MyFeelanceManager',
         link: 'https://my-manager-client.herokuapp.com/',
         subtitle: 'Développement et design',
-        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.`,
+        description: `Application web de gestion de projet pour freelancer.`,
         posterUrl: 'assets/projects/mfm/mfm.jpg',
         slides: [
             {
@@ -62,15 +25,23 @@ export const PROJECTS: Project[] = [
         technos: [
             {
                 name: 'Angular2',
-                posterUrl: 'assets/technos/angularjs.jpg'
+                posterUrl: 'assets/technos/angularjs.jpg',
+                link: 'https://angular.io/'
             },
             {
                 name: 'NodeJs',
-                posterUrl: 'assets/technos/nodejs.jpg'
+                posterUrl: 'assets/technos/nodejs.jpg',
+                link: 'https://nodejs.org/fr/'
             },
             {
                 name: 'Redux',
-                posterUrl: 'assets/technos/redux.jpg'
+                posterUrl: 'assets/technos/redux.jpg',
+                link: 'http://redux.js.org/'
+            },
+            {
+                name: 'Heroku',
+                posterUrl: 'assets/technos/heroku.jpg',
+                link: 'https://www.heroku.com/'
             }
         ]
     },
@@ -79,9 +50,7 @@ export const PROJECTS: Project[] = [
         name: 'TooFrench',
         link: 'https://toofrench.net',
         subtitle: 'Développement',
-        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.`,
+        description: `Site web de mise en relation avec des professeurs de français langue étrangère (FLE).`,
         posterUrl: 'assets/projects/toofrench/toofrench.jpg',
         slides: [
             {
@@ -97,15 +66,23 @@ export const PROJECTS: Project[] = [
         technos: [
             {
                 name: 'AngularJS',
-                posterUrl: 'assets/technos/angularjs.jpg'
+                posterUrl: 'assets/technos/angularjs.jpg',
+                link: 'https://angularjs.org/'
             },
             {
                 name: 'NodeJs',
-                posterUrl: 'assets/technos/nodejs.jpg'
+                posterUrl: 'assets/technos/nodejs.jpg',
+                link: 'https://nodejs.org/fr/'
             },
             {
                 name: 'MongoDB',
-                posterUrl: 'assets/technos/mongo.jpg'
+                posterUrl: 'assets/technos/mongo.jpg',
+                link: 'https://www.mongodb.com/fr'
+            },
+            {
+                name: 'Heroku',
+                posterUrl: 'assets/technos/heroku.jpg',
+                link: 'https://www.heroku.com/'
             }
         ]
     },
@@ -114,9 +91,7 @@ export const PROJECTS: Project[] = [
         name: 'LesRégimes',
         link: 'http://lesregimes.net',
         subtitle: 'Développement',
-        description: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.`,
+        description: `Site communautaire sur la diététique et les régimes.`,
         posterUrl: 'assets/projects/regimesnet/regimesnet.jpg',
         slides: [
             {
@@ -138,16 +113,65 @@ export const PROJECTS: Project[] = [
         technos: [
             {
                 name: 'AngularJS',
-                posterUrl: 'assets/technos/angularjs.jpg'
+                posterUrl: 'assets/technos/angularjs.jpg',
+                link: 'https://angularjs.org/'
             },
             {
                 name: 'NodeJs',
-                posterUrl: 'assets/technos/nodejs.jpg'
+                posterUrl: 'assets/technos/nodejs.jpg',
+                link: 'https://nodejs.org/fr/'
             },
             {
                 name: 'MongoDB',
-                posterUrl: 'assets/technos/mongo.jpg'
+                posterUrl: 'assets/technos/mongo.jpg',
+                link: 'https://www.mongodb.com/fr'
+            },
+            {
+                name: 'Heroku',
+                posterUrl: 'assets/technos/heroku.jpg',
+                link: 'https://www.heroku.com/'
             }
         ]
-    }
+    },
+    {
+        id: 1,
+        name: 'WeAreLearning',
+        link: 'https://www.wearelearning.com',
+        subtitle: 'Gestion de projet et développement',
+        description: `Plateforme de conception de diffusion de e-learning et serious game. Participation en tant que salarié chez WeAreLearning.`,
+        posterUrl: 'assets/projects/wal/wal.jpg',
+        slides: [
+            {
+                posterUrl: 'assets/projects/wal/wal-1.png'
+            },
+            {
+                posterUrl: 'assets/projects/wal/wal-2.jpg'
+            },
+            {
+                posterUrl: 'assets/projects/wal/wal-3.jpg'
+            }
+        ],
+        technos: [
+            {
+                name: 'J2EE',
+                posterUrl: 'assets/technos/j2ee.jpg',
+                link: 'https://deltaspike.apache.org/'
+            },
+            {
+                name: 'JBoss',
+                posterUrl: 'assets/technos/jboss.jpg',
+                link: 'http://wildfly.org/'
+            },
+            {
+                name: 'MySQL',
+                posterUrl: 'assets/technos/mysql.jpg',
+                link: 'https://www.mysql.com/fr/'
+            },
+            {
+                name: 'Hibernate',
+                posterUrl: 'assets/technos/hibernate.jpg',
+                link: 'http://hibernate.org/'
+            }
+        ]
+    },
 ];

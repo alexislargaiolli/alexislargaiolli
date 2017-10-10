@@ -5,8 +5,10 @@
       <a target="_blank" href="{{project.link}}"><i class="fa fa-link" aria-hidden="true"></i>{{project.link | link}}</a>
       <p>{{project.description}}</p>
     </div>
-    <div class="techno-list d-flex justify-content-between align-items-center">
-      <img *ngFor="let techno of project.technos" [src]="techno.posterUrl" [mdTooltip]="techno.name">
+    <div class="techno-list row">
+      <div *ngFor="let techno of project.technos" class="col-6 d-flex justify-content-center align-items-center">
+        <a href="{{techno.link}}" target="_blank"><img [src]="techno.posterUrl" [mdTooltip]="techno.name"></a>
+      </div>
     </div>
   </div>
 

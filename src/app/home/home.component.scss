@@ -1,6 +1,6 @@
 @import '../../variables';
 :host {
-  padding-top: 10%;
+  height: 100%;
   display: block;
 }
 
@@ -27,11 +27,38 @@ h2 {
 
 p {
   color: #555;
+  text-align: justify;
 }
 
 nav {
   text-align: right;
   a:not(:last-child) {
     margin-right: 30px;
+  }
+}
+
+.link-panel {
+  a {
+    margin: 20px 0;
+    text-decoration: none;
+    color: $text-color;
+    transition: 100ms transform;
+    transition-timing-function: ease-in-out;
+    .fa {
+      font-size: 40px;
+    }
+    .linkedin {
+      color: #0077B5;
+    }
+    .fa,
+    img {
+      width: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    &:hover {
+      transform: scale(1.1);
+      transform-origin: center center;
+    }
   }
 }

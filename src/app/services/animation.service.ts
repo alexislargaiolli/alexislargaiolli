@@ -31,6 +31,10 @@ export class AnimationService {
         return this._datas.get(key);
     }
 
+    public removeData(key) {
+        this._datas.delete(key);
+    }
+
     /**
      * Compute data to translate an element at a current position from a initial position to a final position.
      * IE : translate a element at c from a to b

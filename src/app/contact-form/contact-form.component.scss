@@ -4,6 +4,10 @@
   display: block;
 }
 
+.container {
+  max-width: 600px;
+}
+
 .home-title {
   display: inline-block;
 }
@@ -20,32 +24,6 @@ nav {
 .mat-raised-button {
   text-transform: uppercase;
   font-weight: bold;
-}
-
-.link-panel {
-  a {
-    margin: 20px 0;
-    text-decoration: none;
-    color: $text-color;
-    transition: 100ms transform;
-    transition-timing-function: ease-in-out;
-    .fa {
-      font-size: 40px;
-    }
-    .linkedin {
-      color: #0077B5;
-    }
-    .fa,
-    img {
-      width: 40px;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-    &:hover {
-      transform: scale(1.1);
-      transform-origin: center center;
-    }
-  }
 }
 
 form {

@@ -1,18 +1,50 @@
-<div class="container">
-  <section>
-    <h1>Alexis Largaiolli</h1>
-    <h2 i18n>Développeur freelance basé à Montpellier</h2>
-    <p class="text-justify" i18n>
-      Curieux de nature et passionné d'ingénierie logicielle, j'ai évolué pendant 4 ans sur le poste de chef de projet au sein
-      de la startup montpelliéraine WeAreLearning. Freelancer à temps partiel pendant cette période, j'ai développé d'innovantes
-      applications web. Fort de ces expériences, je maîtrise un large panel de compétences allant au-delà du développement
-      web comme l'administration de système, la mise en place d'infrastructures serveurs, la sécurité informatique etc...
-    </p>
-  </section>
+<div class="d-flex flex-column justify-content-between align-items-center h-100">
+  <div></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-6 d-flex flex-column justify-content-between">
+        <h1>Alexis Largaiolli</h1>
+        <h2 i18n>Ingénieur développeur freelance Montpelliérain</h2>
+        <div>
+          <p i18n>
+            Site web, application mobile, logiciel sont de merveilleux outils. A condition qu'ils soit bien réalisés techniquement et
+            visuellement.
+          </p>
+          <p>
+            Passioné de développement, je maîtrise un large panel de technologies pour développer votre projet sur mesure. Qualité, optimisation
+            et sécurité sont clés dans mon travail. Ma collaboration de plusieurs années avec un graphiste vous assure une
+            qualité visuel indispensable.
+          </p>
+          <p class="m-0">
+            En me confiant la création de votre site / application, vous aurez donc l'assurance d'un produit de qualité, fonctionnel
+            et performant.
 
-  <nav>
-    <a #workLink (click)="goTo(workLink, '/works')" class="home-title">Mes projets</a>
-    <a #clientsLink (click)="goTo(clientsLink, '/clients')" class="home-title">Mes clients</a>
-    <a #contactLink (click)="goTo(contactLink, '/contact')" class="home-title">Me contacter</a>
-  </nav>
+            <!-- Passionnée, site sur mesure, site / appli mobile, fullstack J'analyse, conçois, et développe site web et application mobile
+      sur mesure. Véritable passioné, je maîtrise divers compétences et languages informatique que je sélectionne pour répondre
+      au mieux à vos besoins. Après 4 ans en tant que chef de projet chez WeAreLearning, je poursuis Curieux de nature et
+      passionné d'ingénierie logicielle, j'ai évolué pendant 4 ans sur le poste de chef de projet au sein de la startup montpelliéraine
+      WeAreLearning. Freelancer à temps partiel pendant cette période, j'ai développé d'innovantes applications web. Fort
+      de ces expériences, je maîtrise un large panel de compétences allant au-delà du développement web comme l'administration
+      de système, la mise en place d'infrastructures serveurs, la sécurité informatique etc... -->
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-6 d-flex flex-column justify-content-between align-items-center link-panel">
+        <div></div>
+        <div class="my-4">
+          <a href="https://www.linkedin.com/in/alexis-largaiolli" target="_blank"><i class="fa fa-linkedin-square linkedin" aria-hidden="true"></i>Linked In</a>
+          <a href="https://www.hopwork.fr/profile/alexislargaiolli" target="_blank"><img src="assets/hopwork.png">Hopwork</a>
+        </div>
+        <nav>
+          <a #workLink (click)="goTo(workLink, '/works')" class="home-title">Réalisations</a>
+          <a #clientsLink (click)="goTo(clientsLink, '/clients')" class="home-title">Mes clients</a>
+          <a #contactLink (click)="goTo(contactLink, '/contact')" class="home-title">Me contacter</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div></div>
+  <footer>
+    <p>© 2017 - Alexis Largaiolli - Mentions légales</p>
+  </footer>
 </div>

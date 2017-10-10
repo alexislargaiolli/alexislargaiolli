@@ -13,16 +13,18 @@
 
 .project-info {
   h2 {
-    font-size: 20px;
+    font-size: 25px;
     color: $title-color;
   }
   p {
     text-align: justify;
     color: $text-color;
+    margin-top: 15px;
   }
   a {
     margin: 5px 0;
     display: block;
+    font-size: 0.8em;
     color: $accent-color;
     i {
       color: $text-color;

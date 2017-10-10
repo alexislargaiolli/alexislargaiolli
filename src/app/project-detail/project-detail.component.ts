@@ -148,6 +148,8 @@ export class ProjectDetailComponent implements OnInit, OnDestroy, AfterViewInit,
   private buildAnim() {
     const metadatas: AnimationMetadata[] = [];
     const initialRect = this._animationService.getData(AnimationService.SELECTED_PROJECT_IMAGE_POSITION_KEY);
+    this._animationService.storeData('scrollTop', document.body.scrollTop);
+    document.body.scrollTop = 0;
     metadatas.push(
       query('h2, a, p, .techno-list img', [
         style({ opacity: 0, transform: 'translateX(-10%)' }),

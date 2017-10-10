@@ -21,13 +21,11 @@ nav {
 
 .project-list {
   position: absolute;
-  width: 100%;
-  max-height: -moz-calc(100% - 60px);
-  max-height: -webkit-calc(100% - 60px);
-  max-height: calc(100% - 60px);
-  padding-bottom: 15px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  width: 100%; // max-height: -moz-calc(100% - 60px);
+  // max-height: -webkit-calc(100% - 60px);
+  // max-height: calc(100% - 60px);
+  padding-bottom: 15px; // overflow-y: auto;
+  // overflow-x: hidden;
   align-items: flex-start;
   &.hidden {
     opacity: 0;
